@@ -222,6 +222,7 @@ export default function LandingPage() {
           <span className="font-medium text-slate-700 text-sm">HemoLens</span>
         </div>
         <p className="text-xs text-slate-400">© 2026 HemoLens. Educational use only — not a substitute for medical advice.</p>
+        <p className="text-xs text-slate-400">By: Tanay Singhvi</p>
       </footer>
     </div>
   )
