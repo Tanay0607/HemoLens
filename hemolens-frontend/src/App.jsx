@@ -3,6 +3,7 @@
 
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { useAuth } from './hooks/useAuth'
+import LandingPage from './pages/LandingPage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import DashboardPage from './pages/DashboardPage'
@@ -28,7 +29,9 @@ function PublicRoute({ children }) {
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+      <Route path="/" element={
+        <PublicRoute><LandingPage /></PublicRoute>
+      } />
 
       <Route path="/login" element={
         <PublicRoute><LoginPage /></PublicRoute>
