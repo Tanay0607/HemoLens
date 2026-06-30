@@ -11,7 +11,15 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     // Try to restore user from localStorage on page load
     const saved = localStorage.getItem('hemolens_user')
-    return saved ? JSON.parse(saved) : null
+    if (!saved || saved === 'undefined' || saved === 'null') return null
+    try {
+      return JSON.parse(saved)
+    } catch {
+      // Corrupted data — clear it so this never crashes again
+      localStorage.removeItem('hemolens_user')
+      localStorage.removeItem('hemolens_token')
+      return null
+    }
   })
   const [loading, setLoading] = useState(true)
 
@@ -19,6 +27,10 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const token = localStorage.getItem('hemolens_token')
     if (token) {
+      // Safety net: if the backend is slow to wake up (Render free tier
+      // cold start), don't leave the UI stuck loading forever
+      const timeout = setTimeout(() => setLoading(false), 8000)
+
       authAPI.getMe()
         .then((res) => setUser(res.data.user))
         .catch(() => {
@@ -26,7 +38,7 @@ export function AuthProvider({ children }) {
           localStorage.removeItem('hemolens_user')
           setUser(null)
         })
-        .finally(() => setLoading(false))
+        .finally(() => { clearTimeout(timeout); setLoading(false) })
     } else {
       setLoading(false)
     }
