@@ -18,7 +18,7 @@ export default function Navbar() {
         <Link to="/dashboard" className="flex items-center gap-2.5">
           <div className="w-8 h-8 bg-[#2F3CED] rounded-xl flex items-center justify-center">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"/>
             </svg>
           </div>
           <span className="font-display font-semibold text-slate-900 tracking-tight">HemoLens</span>

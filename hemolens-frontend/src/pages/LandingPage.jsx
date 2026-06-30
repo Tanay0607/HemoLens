@@ -4,7 +4,7 @@
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Sparkles, ShieldCheck, MessageCircle,
-  TrendingUp, FlaskConical, CheckCircle2, Upload, Brain, FileBarChart, FileText,
+  TrendingUp, FlaskConical, CheckCircle2, Upload, Brain, FileBarChart, Eye,
 } from 'lucide-react'
 
 function NavBar() {
@@ -13,7 +13,7 @@ function NavBar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5">
           <div className="w-8 h-8 bg-[#2F3CED] rounded-xl flex items-center justify-center">
-            <FileText size={16} className="text-white" />
+            <Eye size={16} className="text-white" />
           </div>
           <span className="font-display font-semibold text-slate-900 text-lg tracking-tight">HemoLens</span>
         </Link>
@@ -95,7 +95,7 @@ const FEATURES = [
   { Icon: FlaskConical,   title: 'Any lab report',         desc: 'Works with CBC, lipid panels, thyroid, liver, kidney function, and more.' },
   { Icon: TrendingUp,     title: 'Track trends',           desc: 'See how your values change across multiple reports over time.' },
   { Icon: MessageCircle,  title: 'Ask follow-up questions',desc: 'Chat with HemoLens AI about any result, right inside the report.' },
-  { Icon: FileText,       title: 'Doctor-ready export',    desc: 'Download a clean PDF summary to bring to your next appointment.' },
+  { Icon: Eye,            title: 'Doctor-ready export',    desc: 'Download a clean PDF summary to bring to your next appointment.' },
   { Icon: ShieldCheck,    title: 'Private by design',      desc: 'Your reports are encrypted and visible only to you, always.' },
 ]
 
@@ -217,7 +217,7 @@ export default function LandingPage() {
       <footer className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between flex-wrap gap-4">
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 bg-[#2F3CED] rounded-lg flex items-center justify-center">
-            <FileText size={12} className="text-white" />
+            <Eye size={12} className="text-white" />
           </div>
           <span className="font-medium text-slate-700 text-sm">HemoLens</span>
         </div>
