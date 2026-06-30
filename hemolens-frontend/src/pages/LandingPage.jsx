@@ -85,9 +85,9 @@ function HeroMockup() {
 }
 
 const STEPS = [
-  { n: '01', title: 'Upload', desc: 'Drop in a PDF or photo of your blood test report — any lab format works.', Icon: Upload },
-  { n: '02', title: 'Analyze', desc: 'AI extracts every biomarker and flags what falls outside the normal range.', Icon: Brain },
-  { n: '03', title: 'Understand', desc: 'Get a plain-English summary, ask follow-up questions, and export a PDF.', Icon: FileBarChart },
+  { n: '1', title: 'Upload', desc: 'Drop in a PDF or photo of your blood test report — any lab format works.', Icon: Upload },
+  { n: '2', title: 'Analyze', desc: 'AI extracts every biomarker and flags what falls outside the normal range.', Icon: Brain },
+  { n: '3', title: 'Understand', desc: 'Get a plain-English summary, ask follow-up questions, and export a PDF.', Icon: FileBarChart },
 ]
 
 const FEATURES = [
